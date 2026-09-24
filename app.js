@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 app.use(cors())
 
-app.get('/kab', cors(), async (req, res) => {
+app.get('/kecamatan', cors(), async (req, res) => {
     const code = req.query?.code;
     if (!code) return res.status(400).json({
         error: 'code query required!'

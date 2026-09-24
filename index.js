@@ -2,44 +2,51 @@ let isChange = []
 const inputKabupaten = document.getElementById('kabupaten');
 const inputKecamatan = document.getElementById('kecamatan');
 const inputDesa = document.getElementById('desa');
+
 inputKabupaten.addEventListener('change', async (e) => {
     const optionKab = e.target.value;
     if (isChange[0]) {
         inputKecamatan.innerHTML = '<option value="">Kec</option>'
         isChange[0] = false;
     }
-    if (kabupaten) {
-        isChange[0] = true;
-        const kecamatan = await fetch(`http://localhost:3000/kab?code=${optionKab}`);
-        const result = await kecamatan.json();
-        result.data?.forEach(d => {
-            const option = document.createElement('option');
-            option.value = d.code
-            option.textContent = d.name;
-            inputKecamatan.appendChild(option);
-        });
+    if (optionKab) {
+        try {
+            isChange[0] = true;
+            const kecamatan = await fetch(`http://localhost:3000/kecamatan?code=${optionKab}`);
+            const listKecamatan = await kecamatan.json();
+            listKecamatan.data.forEach(d => {
+                const option = document.createElement('option');
+                option.value = d.code
+                option.textContent = d.name;
+                inputKecamatan.appendChild(option);
+            });
+        } catch (error) {
+            console.error(error.message)
+        }
     }
-
 });
 
 inputKecamatan.addEventListener('change', async (e) => {
+    const optionKec = e.target.value;
     if (isChange[1]) {
         inputDesa.innerHTML = `<option value="">Kel/Desa</option>`;
         isChange[1] = false;
     }
-    const optionKec = e.target.value;
     if (optionKec) {
-        isChange[1] = true;
-        const kecamatan = await fetch(`http://localhost:3000/desa?code=${optionKec}`);
-        const result = await kecamatan.json();
-        result.data.map(d => {
-            const option = document.createElement('option');
-            option.value = d.code;
-            option.textContent = d.name;
-            inputDesa.appendChild(option);
-        })
+        try {
+            isChange[1] = true;
+            const desa = await fetch(`http://localhost:3000/desa?code=${optionKec}`);
+            const listDesa = await desa.json();
+            listDesa.data.map(d => {
+                const option = document.createElement('option');
+                option.value = d.code;
+                option.textContent = d.name;
+                inputDesa.appendChild(option);
+            })
+        } catch (error) {
+            console.error(error.message)
+        }
     }
-
 });
 
 
@@ -79,7 +86,6 @@ inputDesa.addEventListener('change', async (e) => {
                 break;
             }
         }
-
         document.querySelector('.card-cuaca').classList.add('display')
     }
 })

@@ -51,63 +51,122 @@ body {
 }
 
 .card-cuaca {
-    background: white;
-    color: white;
-    margin: 40px auto;
-    width: 250px;
-    height: 300px;
-    overflow: hidden;
     border-radius: 10px;
+    background: url('./assets/cloudy.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 20px auto;
+    width: 300px;
+    transform: translateY(0px);
     opacity: 0;
-    transform: translateY(0);
-    transition: opacity 1s ease, transform 1.4s ease-in;
+    padding: 10px;
+    transition: opacity .8s ease-in,transform 1s ease-in;
 }
 
 .card-cuaca.display {
     opacity: 1;
     transform: translateY(-10px);
 }
-.header-card {
-    width: 100%;
-    background: url('./assets/sunny.jpg');
-    background-size: cover;
-    background-position: center ;
-    height: 70%;
+
+.desc-lokasi {
+    font-size: .8rem;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    flex-direction: column;
-}
-
-.suhu {
-    font-size: 3rem;
-    text-shadow: 0 0 5px black;
-}
-
-.desc-cuaca {
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-shadow: 0 0 3px black;
-}
-
-.loc {
-    align-self: flex-end;
-    padding: 0 10px;
-    text-shadow: 0px 0px 5px black;
-}
-
-.detail {
-    color: #a9abaa;
-    font-size: 1.2rem;
-    list-style: none;
-    margin: 0 10px;
-}
-
-.detail li {
-    display: flex;
     justify-content: space-between;
 }
-
-.nilai {
-    color: #022d45
+.desa, .waktu , .desc-suhu, .kondisi {
+    color: white;
+    text-shadow: 0px 0px 5px black;
 }
+.desc-lokasi .desa {
+    flex: 1;
+    font-weight: bold;
+}
+
+.desc-lokasi .waktu {
+    font-weight: 500;
+}
+
+.panel-body {
+    text-align: center;
+    width: 50%;
+    margin: 10px auto;
+}
+
+.desc-suhu {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.kondisi  {
+    font-weight: 600;
+}
+
+.panel-footer {
+    color: rgba(255, 252, 252, 0.992);
+    border: 1.2px solid rgb(223, 221, 221);
+    width: 90%;
+    backdrop-filter: blur(0.7px);
+    border-radius: 10px;
+    margin: 10px auto;
+    background-color: rgba(76, 76, 76, 0.663);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    
+}
+
+.statistik {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    font-size: .8rem;
+    border-bottom: 1.2px solid rgb(227, 227, 227);
+    line-height: 1.4rem;
+    width: 85%;
+}
+
+.statistik .label {
+    color: rgba(255, 255, 255, 0.953);
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.statistik .value {
+    font-size: 0.6rem;
+}
+
+.perkiraan {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 10px 0;
+}
+
+.perkiraan li {
+    line-height: 15px;
+    text-align: center;
+}
+
+.p-waktu {
+    color: #bcbdbf;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+
+.p-suhu {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.source a {
+    font-size: 0.9rem;
+    color:#9090f7;
+    font-weight: 600;;
+    text-decoration: none;
+}
+

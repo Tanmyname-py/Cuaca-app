@@ -39,22 +39,52 @@
                 </select>
             </div>
         </div>
+        <!-- Card cuaca -->
+        <article class="card-cuaca">
+            <div class="panel-header">
+                <p class="desc-lokasi">
+                    <span class="desa">--</span>
+                    <span class="waktu">--,--</span>
+                </p>
+            </div>
 
-        <div class="card-cuaca">
-            <div class="header-card">
-                <h2 class="suhu">3 &deg;</h2>
-                <p class="desc-cuaca">Cerah</p>
-                <p class="loc">Jereweh, Goa</p>
+
+            <div class="panel-body">
+                    <p class="desc-suhu">
+                        <span>--<sup>&deg;</sup></span>
+                    </p>
+                    <p class="kondisi">--</p>
             </div>
-            <div class="body-card">
-                <ul class="detail">
-                    <li>
-                        <span class="label">Kelembapan </span>
-                        <span class="nilai">20%</span>
-                    </li>
+
+            <div class="panel-footer">
+                <div class="statistik">
+                      <p><span class="label">Kelembapan</span> <b class="value">0%</b></p> 
+                      <p><span class="label">Angin</span> <b class="value">0km/jam</b></p> 
+                      <p><span class="label">Hujan</span> <b class="value">0mm</b></p> 
+                </div>
+
+                <ul class="perkiraan">
+                        <li>
+                            <p class="p-waktu">00.00</p>
+                            <p class="p-suhu">2<sup>&deg;</sup></p>
+                        </li>
+                        <li>
+                            <p class="p-waktu">00.00</p>
+                            <p class="p-suhu">2<sup>&deg;</sup></p>
+                        </li>
+                        <li>
+                            <p class="p-waktu">00.00</p>
+                            <p class="p-suhu">2<sup>&deg;</sup></p>
+                        </li>
+                        <li>
+                            <p class="p-waktu">00.00</p>
+                            <p class="p-suhu">2<sup>&deg;</sup></p>
+                        </li>
                 </ul>
+
+                <div class="source"><a href="https://bmkg.go.id" target="_blank">Source: Bmkg</a></div>
             </div>
-        </div>
+        </article>
     </div>
     <script src="index.js"></script>
 </body>
